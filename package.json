@@ -1,0 +1,30 @@
+{
+  "name": "rabbet",
+  "version": "1.0.0",
+  "description": "yaml refer",
+  "main": "lib/index.js",
+  "author": "tommy",
+  "license": "MIT",
+  "scripts": {
+    "test": "nyc mocha --recursive --exit"
+  },
+  "bin": {
+    "rabbit": "./bin/index.js"
+  },
+  "dependencies": {
+    "chokidar": "^3.3.1",
+    "cli-color": "^2.0.0",
+    "commander": "^4.1.0",
+    "express": "^4.17.1",
+    "open": "^7.0.0",
+    "swagger-ui-express": "^4.1.2",
+    "yaml": "^1.7.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "nyc": "^15.0.0",
+    "sinon": "^8.0.4",
+    "supertest": "^4.0.2"
+  }
+}
