@@ -1,15 +1,16 @@
 {
-  "name": "rabbet",
-  "version": "1.0.0",
+  "name": "@superbogy/zly",
+  "version": "0.0.1",
   "description": "yaml refer",
   "main": "lib/index.js",
   "author": "tommy",
   "license": "MIT",
+  "repository": "github:superbogy/zly",
   "scripts": {
-    "test": "nyc mocha --recursive --exit"
+    "test": "mocha --recursive --exit"
   },
   "bin": {
-    "rabbit": "./bin/index.js"
+    "zly": "./bin/index.js"
   },
   "dependencies": {
     "chokidar": "^3.3.1",
