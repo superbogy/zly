@@ -1,0 +1,9 @@
+schemas:
+  Pet:
+    $ref: ./Pet.yaml
+  Pets:
+    type: array
+    items:
+      $ref: "#/components/schemas/Pet"
+  Error:
+    $ref: Error.yaml

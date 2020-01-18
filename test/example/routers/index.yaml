@@ -1,0 +1,6 @@
+#================= pets =================#
+/pets:
+  $ref: pets/list.yaml
+/pets/{petId}:
+  $ref: pets/$id.yaml
+#================= end pets =============#
