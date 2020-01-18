@@ -5,15 +5,12 @@ Think about that when you try to write a swagger document with more that 100 api
 
 ### Install 
 
-`npm i -g zly`
-
-If you have not installed node.js env, here is a [binary file](https://github.com) with simple function. 
-
+`npm i -g @superbogy/zly`
 
 ### Get-started
 
 ```
-Usage: index [options]
+Usage: zly [options]
 
 Options:
   -V, --version        output the version number
@@ -21,7 +18,7 @@ Options:
   -w, --workspace      yaml file root path
   -f, --format <type>  format output style, yaml or json (default: "yaml")
   -p, --pretty         pretty out put
-  -s, --server         start a swagger ui server
+  -s, --server         start a swagger ui
   -e, --extname <ext>  extend name, split with comma
   -h, --help           output usage information
  ```

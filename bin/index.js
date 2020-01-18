@@ -34,7 +34,7 @@ const restart = (entry, workspace, extnames) => {
   }
 };
 
-commander.version('0.0.1')
+commander.version('0.1.1')
   .option('-o, --output <path>', 'put the result to file')
   .option('-w, --workspace', 'yaml file root path')
   .option('-f, --format <type>', 'format output style, yaml or json', 'yaml')
