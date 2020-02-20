@@ -1,13 +1,15 @@
-:dango: zly is a yaml assembly. You can split a large yaml file into many fragments.
-It is very useful with writing a swagger API document. 
-You can refer yaml piece from relative path or absolute path.
-Think about that when you try to write a swagger document with more that 100 apis, how large the yaml file will be. It is hard to edit and make giddy.
+:dango: zly is a yaml assembly parser. You can split a large yaml file into small fragments.
+It is very useful for writing a swagger API document. 
+You can import yaml piece from relative path or absolute path.
+
 
 ### Install 
 
 `npm i -g @superbogy/zly`
 
 ### Get-started
+
+
 
 ```
 Usage: zly [options]
@@ -23,11 +25,20 @@ Options:
   -h, --help           output usage information
  ```
  
- ### demo
- 
-- import yaml file
-    `$ref: relative/path/some.yaml`
-- structure
+ ### Get-started
+
+- preview a swagger yaml file: `zly -s api-spec.yaml`
+
+- import yaml file: `$ref: relative/path/some.yaml`
+
+### Demo
+
+clone this project and run `zly -s test/example/index.yaml`
+
+![zly](https://user-images.githubusercontent.com/6630736/74917614-bca7c200-5402-11ea-8dd5-655e375da546.gif)
+
+structure
+
 ```
 ├── definitions
 │   ├── Error.yaml
@@ -58,4 +69,3 @@ for routers/index.yaml:
 
 ```
 
-run with `zly -s entry.yaml`
