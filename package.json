@@ -1,6 +1,6 @@
 {
   "name": "@superbogy/zly",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "yaml refer",
   "main": "lib/index.js",
   "author": "tommy",
@@ -13,10 +13,10 @@
     "zly": "./bin/index.js"
   },
   "dependencies": {
-    "chokidar": "^3.3.1",
     "cli-color": "^2.0.0",
     "commander": "^4.1.0",
     "express": "^4.17.1",
+    "express-ws": "^4.0.0",
     "open": "^7.0.0",
     "swagger-ui-express": "^4.1.2",
     "yaml": "^1.7.2"

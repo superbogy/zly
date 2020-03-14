@@ -268,6 +268,11 @@ assertion-error@^1.1.0:
   resolved "https://registry.npm.taobao.org/assertion-error/download/assertion-error-1.1.0.tgz#e60b6b0e8f301bd97e5375215bda406c85118c0b"
   integrity sha1-5gtrDo8wG9l+U3UhW9pAbIURjAs=
 
+async-limiter@~1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
+  integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.npm.taobao.org/asynckit/download/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
@@ -379,21 +384,6 @@ chokidar@3.3.0:
     readdirp "~3.2.0"
   optionalDependencies:
     fsevents "~2.1.1"
-
-chokidar@^3.3.1:
-  version "3.3.1"
-  resolved "https://registry.npm.taobao.org/chokidar/download/chokidar-3.3.1.tgz#c84e5b3d18d9a4d77558fef466b1bf16bbeb3450"
-  integrity sha1-yE5bPRjZpNd1WP70ZrG/FrvrNFA=
-  dependencies:
-    anymatch "~3.1.1"
-    braces "~3.0.2"
-    glob-parent "~5.1.0"
-    is-binary-path "~2.1.0"
-    is-glob "~4.0.1"
-    normalize-path "~3.0.0"
-    readdirp "~3.3.0"
-  optionalDependencies:
-    fsevents "~2.1.2"
 
 clean-stack@^2.0.0:
   version "2.2.0"
@@ -729,6 +719,13 @@ event-emitter@^0.3.5:
     d "1"
     es5-ext "~0.10.14"
 
+express-ws@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/express-ws/-/express-ws-4.0.0.tgz#dabd8dc974516418902a41fe6e30ed949b4d36c4"
+  integrity sha512-KEyUw8AwRET2iFjFsI1EJQrJ/fHeGiJtgpYgEWG3yDv4l/To/m3a2GaYfeGyB3lsWdvbesjF5XCMx+SVBgAAYw==
+  dependencies:
+    ws "^5.2.0"
+
 express@^4.17.1:
   version "4.17.1"
   resolved "https://registry.npm.taobao.org/express/download/express-4.17.1.tgz#4491fc38605cf51f8629d39c2b5d026f98a4c134"
@@ -870,7 +867,7 @@ fs.realpath@^1.0.0:
   resolved "https://registry.npm.taobao.org/fs.realpath/download/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
-fsevents@~2.1.1, fsevents@~2.1.2:
+fsevents@~2.1.1:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/fsevents/download/fsevents-2.1.2.tgz#4c0a1fb34bc68e543b4b82a9ec392bfbda840805"
   integrity sha1-TAofs0vGjlQ7S4Kp7Dkr+9qECAU=
@@ -1628,7 +1625,7 @@ pathval@^1.1.0:
   resolved "https://registry.npm.taobao.org/pathval/download/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
   integrity sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
 
-picomatch@^2.0.4, picomatch@^2.0.7:
+picomatch@^2.0.4:
   version "2.2.1"
   resolved "https://registry.npm.taobao.org/picomatch/download/picomatch-2.2.1.tgz?cache=0&sync_timestamp=1578174204122&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fpicomatch%2Fdownload%2Fpicomatch-2.2.1.tgz#21bac888b6ed8601f831ce7816e335bc779f0a4a"
   integrity sha1-IbrIiLbthgH4Mc54FuM1vHefCko=
@@ -1704,13 +1701,6 @@ readdirp@~3.2.0:
   integrity sha1-wwwzNSsSyW37S4lUIaSf1alZODk=
   dependencies:
     picomatch "^2.0.4"
-
-readdirp@~3.3.0:
-  version "3.3.0"
-  resolved "https://registry.npm.taobao.org/readdirp/download/readdirp-3.3.0.tgz?cache=0&sync_timestamp=1575629920252&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Freaddirp%2Fdownload%2Freaddirp-3.3.0.tgz#984458d13a1e42e2e9f5841b129e162f369aff17"
-  integrity sha1-mERY0ToeQuLp9YQbEp4WLzaa/xc=
-  dependencies:
-    picomatch "^2.0.7"
 
 regenerator-runtime@^0.13.2:
   version "0.13.3"
@@ -2163,6 +2153,13 @@ write-file-atomic@^3.0.0:
     is-typedarray "^1.0.0"
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
+
+ws@^5.2.0:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.2.tgz#dffef14866b8e8dc9133582514d1befaf96e980f"
+  integrity sha512-jaHFD6PFv6UgoIVda6qZllptQsMlDEJkTQcybzzXDYM1XO9Y8em691FGMPmM46WGyLU4z9KMgQN+qrux/nhlHA==
+  dependencies:
+    async-limiter "~1.0.0"
 
 y18n@^4.0.0:
   version "4.0.0"

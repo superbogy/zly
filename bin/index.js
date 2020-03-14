@@ -6,35 +6,41 @@ const color = require('cli-color');
 const Yaml = require('yaml');
 const Zly = require('../lib/index');
 const watcher = require('chokidar');
-const open = require('open');
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
-const http = require('http');
+const expressWS = require('express-ws');
+const path = require('path');
+const server = require('../lib/server').server;
 
-const monitor = {};
-const restart = (entry, workspace, extnames) => {
-  monitor.pending = true;
-  monitor.action = 'restart';
-  if (!monitor.server) {
-    const app = express();
-    app.use('/', swaggerUi.serve);
-    app.get('/', (req, res, next) => {
-      const zly = new Zly(entry, workspace, extnames);
-      data = zly.run();
-      return swaggerUi.setup(data)(req, res, next);
+const startServer1 = (entry, workspace, extnames, port=2020) => {
+  const app = express();
+  expressWS(app);
+  app.use('/', swaggerUi.serve);
+  app.use('/static', express.static(path.resolve('../static')));
+  app.get('/', (req, res, next) => {
+    const zly = new Zly(entry, workspace, extnames);
+    data = zly.run();
+    const options = {
+      customJs: '/static/ws.js'
+    }
+    return swaggerUi.setup(data, options)(req, res, next);
+  });
+  app.get('/ws', function(req, res, next){
+    console.log('get route', req.testing);
+    res.end();
+  });
+   
+  app.ws('/ws', function(ws, req) {
+    ws.on('message', function(msg) {
+      console.log(msg);
     });
-    const server = http.createServer(app);
-    monitor.state = 'running';
-    monitor.pending = false;
-    server.listen('3300', '0.0.0.0');
-    server.on('listening', () => {
-      open('http://localhost:3300/', { background: true });
-    });
-    monitor.server = server;
-  }
+    console.log('socket', req.testing);
+  });
+  
+  app.listen(2020, );
 };
 
-commander.version('0.1.1')
+commander.version('0.1.2')
   .option('-o, --output <path>', 'put the result to file')
   .option('-w, --workspace', 'yaml file root path')
   .option('-f, --format <type>', 'format output style, yaml or json', 'yaml')
@@ -64,7 +70,6 @@ try {
 
   const workspace = commander.workspace;
   const zly = new Zly(entry, workspace, extnames);
-  const root = zly.root;
   const out = zly.run();
   let document = ''
   if (commander.format === 'yaml') {
@@ -76,21 +81,13 @@ try {
   if (commander.output) {
     fs.writeFileSync(commander.output, document);
   } else if (commander.server) {
-    watcher.watch(workspace || root, {
-      interval: 1000,
-      binaryInterval: 2000,
-      alwaysStat: false,
-      depth: 99,
-      awaitWriteFinish: {
-        stabilityThreshold: 2000,
-        pollInterval: 1000
-      },
-    }).on('change', _ => restart(entry, workspace, extnames))
-      .on('ready', _ => restart(entry, workspace, extnames))
-      .on('unlink', _ => restart(entry, workspace, extnames))
-      .on('error', function (err) {
-        console.log('uncatchException', err);
-      });
+    const options = {
+      entry,
+      extname,
+      port: 2020,
+      workspace: workspace || zly.root,
+    };
+    server(options);
   } else {
     console.log(document);
   }
