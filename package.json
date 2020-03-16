@@ -1,6 +1,6 @@
 {
   "name": "@superbogy/zly",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "yaml refer",
   "main": "lib/index.js",
   "author": "tommy",
