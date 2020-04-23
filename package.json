@@ -13,6 +13,7 @@
     "zly": "./bin/index.js"
   },
   "dependencies": {
+    "chokidar": "^3.3.1",
     "cli-color": "^2.0.0",
     "commander": "^4.1.0",
     "express": "^4.17.1",
