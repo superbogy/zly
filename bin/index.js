@@ -7,7 +7,7 @@ const Yaml = require('yaml');
 const Zly = require('../lib/index');
 const server = require('../lib/server').server;
 
-commander.version('0.1.4')
+commander.version('0.2.0')
   .option('-o, --output <path>', 'put the result to file')
   .option('-w, --workspace', 'yaml file root path')
   .option('-f, --format <type>', 'format output style, yaml or json', 'yaml')
