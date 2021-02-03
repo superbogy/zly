@@ -7,3 +7,5 @@ schemas:
       $ref: "#/components/schemas/Pet"
   Error:
     $ref: Error.yaml
+  RemoteError:
+    $ref: https://raw.githubusercontent.com/superbogy/zly/master/test/example/definitions/Error.yaml

@@ -8,6 +8,6 @@ info:
 servers:
   - url: http://petstore.swagger.io/v1
 paths:
-  $ref: routers/index.yaml
+  $ref: ./routers/index.yaml
 components:
-  $ref: definitions/index.yaml
+  $ref: ./definitions/index.yaml
