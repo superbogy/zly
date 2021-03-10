@@ -56,7 +56,7 @@ paths:
                 $ref: "#/components/schemas/Error"
   "/pets/{petId}":
     get:
-      summary: Info for a specific pet
+      summary: Info for a specific pets
       operationId: showPetById
       tags:
         - pets
@@ -95,6 +95,7 @@ components:
           type: string
         tag:
           type: string
+          description: tag name
     Pets:
       type: array
       items:
@@ -110,4 +111,14 @@ components:
           format: int32
         message:
           type: string
-
+    RemoteError:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string

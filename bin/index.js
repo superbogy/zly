@@ -8,7 +8,7 @@ const Zly = require('../lib/index');
 const server = require('../lib/server').server;
 
 commander
-  .version('0.2.0')
+  .version('0.2.2')
   .option('-o, --output <path>', 'put the result to file')
   .option('-w, --workspace', 'yaml file root path')
   .option('-f, --format <type>', 'format output style, yaml or json', 'yaml')
@@ -35,7 +35,7 @@ const main = async () => {
     const workspace = commander.workspace;
     const zly = new Zly(entry, workspace, extnames);
     let document = '';
-    if (zly.isUrl(entry)) {
+    if (Zly.isUrl(entry)) {
       document = await zly.parseRemote(entry);
     } else {
       const res = await zly.run();

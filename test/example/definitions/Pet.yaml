@@ -10,3 +10,4 @@ properties:
     type: string
   tag:
     type: string
+    description: tag name
