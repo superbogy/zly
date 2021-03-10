@@ -1,5 +1,5 @@
 get:
-  summary: Info for a specific pet
+  summary: Info for a specific pets
   operationId: showPetById
   tags:
     - pets
@@ -11,7 +11,7 @@ get:
       schema:
         type: string
   responses:
-    '200':
+    "200":
       description: Expected response to a valid request
       content:
         application/json:
