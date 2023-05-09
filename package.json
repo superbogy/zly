@@ -7,7 +7,6 @@
   "license": "MIT",
   "repository": "github:superbogy/zly",
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "test": "jest --verbose --runInBand --forceExit test/*.test.js"
   },
   "bin": {

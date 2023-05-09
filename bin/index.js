@@ -6,9 +6,10 @@ const color = require('cli-color');
 const Yaml = require('yaml');
 const Zly = require('../lib/index');
 const server = require('../lib/server').server;
+const package = require('../package.json');
 
 commander
-  .version('0.2.2')
+  .version(package.version)
   .option('-o, --output <path>', 'put the result to file')
   .option('-w, --workspace', 'yaml file root path')
   .option('-f, --format <type>', 'format output style, yaml or json', 'yaml')
