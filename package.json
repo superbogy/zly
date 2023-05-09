@@ -1,12 +1,13 @@
 {
   "name": "@superbogy/zly",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "yaml refer",
   "main": "lib/index.js",
   "author": "tommy",
   "license": "MIT",
   "repository": "github:superbogy/zly",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "jest --verbose --runInBand --forceExit test/*.test.js"
   },
   "bin": {
@@ -20,7 +21,7 @@
     "express": "^4.17.1",
     "express-ws": "^4.0.0",
     "node-fetch": "^2.6.1",
-    "swagger-ui-express": "^4.1.2",
+    "swagger-ui-express": "^4.6.3",
     "yaml": "^1.7.2"
   },
   "devDependencies": {
